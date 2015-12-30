@@ -9,4 +9,8 @@ export default angular.module('transferBrowse', [
   'route-segment',
   'restangular',
   'treeControl',
-]);
+]).
+
+config(['RestangularProvider', function(RestangularProvider) {
+  RestangularProvider.setRequestSuffix('/');
+}]);

@@ -5,6 +5,7 @@ import 'angular-tree-control';
 import 'restangular';
 
 // services
+import './services/browse.service';
 import './services/source_locations.service';
 
 export default angular.module('transferBrowse', [
@@ -12,6 +13,7 @@ export default angular.module('transferBrowse', [
   'route-segment',
   'restangular',
   'treeControl',
+  'services.browse',
   'services.source_locations',
 ]).
 

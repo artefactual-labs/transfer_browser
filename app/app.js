@@ -11,6 +11,7 @@ import 'restangular';
 // services
 import './services/browse.service';
 import './services/source_locations.service';
+import './services/transfer.service';
 
 // controllers
 import './browse/browse.controller';
@@ -22,6 +23,7 @@ export default angular.module('transferBrowse', [
   'treeControl',
   'services.browse',
   'services.source_locations',
+  'services.transfer',
   'controllers.browse',
 ]).
 

@@ -9,7 +9,17 @@ class Transfer {
     this.name = '';
     this.type = 'standard';
     this.accession = '';
-    this.path = '';
+    this.components = [];
+  }
+
+  add_path(path) {
+    this.components.push({path: path});
+  }
+
+  fetch_id_for(component) {
+    return $.get('/transfer/create_metadata_set_uuid/').then(results => {
+      component.id = result.uuid;
+    });
   }
 
   start() {
@@ -24,9 +34,8 @@ class Transfer {
       name: this.name,
       type: this.type,
       accession: this.accession,
-      'paths[]': [this.path],
-      // TODO: implement row UUID feature
-      'row_ids[]': [''],
+      'paths[]': this.components.map(component => component.path),
+      'row_ids[]': this.components.map(component => component.id),
     };
 
     // Cleanup object state on success or failure

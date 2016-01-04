@@ -1,0 +1,18 @@
+<div ng-controller="HeaderController as vm">
+  <label for="transfer-type">Transfer type</label>
+  <select ng-model="vm.transfer.type">
+    <option value="standard" selected>Standard</option>
+    <option value="unzipped bag">Unzipped Bag</option>
+    <option value="zipped bag">Zipped bag</option>
+    <option value="dspace">DSpace</option>
+    <option value="disk image">Disk Image</option>
+  </select>
+
+  <label for="transfer-name">Transfer name</label>
+  <input ng-model="vm.transfer.name"/>
+
+  <label for="transfer-accession">Accession no.</label>
+  <input ng-model="vm.transfer.accession"/>
+
+  <button type="submit" class="btn btn-success" ng-click="vm.transfer.start()">Start transfer</button>
+</div>

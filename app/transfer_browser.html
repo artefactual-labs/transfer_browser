@@ -1,7 +1,10 @@
 <script src="vendor/base64.js"></script>
 <script src="transfer_browse.js"></script>
 
-<div ng-app="transferBrowse" ng-controller="BrowseController as vm">
+<div ng-app="transferBrowse">
+<div ng-include="header/header.html"></div>
+
+<div ng-controller="BrowseController as vm">
   <select ng-model="vm.source_location" ng-change="vm.browse(vm.source_location)">
     <option ng-repeat="(location_uuid, location) in vm.source_locations" value="{{ location_uuid }}">{{ location.description }}</option>
   </select>
@@ -13,4 +16,5 @@
                on-node-toggle="vm.on_toggle(node, expanded)">
     {{ node.title }} ({{ node.properties.display_string }})
   </treecontrol>
+</div>
 </div>

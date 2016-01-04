@@ -1,6 +1,7 @@
 // styles
 import 'angular-tree-control/css/tree-control.css';
 import 'angular-tree-control/css/tree-control-attribute.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import angular from 'angular';
 import 'angular-route';
@@ -15,6 +16,10 @@ import './services/transfer.service';
 
 // controllers
 import './browse/browse.controller';
+import './header/header.controller';
+
+// directives
+import 'ng-cache!./header/header.html';
 
 export default angular.module('transferBrowse', [
   'ngRoute',
@@ -25,6 +30,7 @@ export default angular.module('transferBrowse', [
   'services.source_locations',
   'services.transfer',
   'controllers.browse',
+  'controllers.header',
 ]).
 
 config(['RestangularProvider', function(RestangularProvider) {

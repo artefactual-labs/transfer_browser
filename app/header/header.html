@@ -1,6 +1,6 @@
 <div ng-controller="HeaderController as vm">
   <label for="transfer-type">Transfer type</label>
-  <select ng-model="vm.transfer.type">
+  <select ng-model="vm.transfer.type" ng-disabled="vm.transfer.components.length > 0">
     <option value="standard" selected>Standard</option>
     <option value="unzipped bag">Unzipped Bag</option>
     <option value="zipped bag">Zipped bag</option>
@@ -16,11 +16,19 @@
 
   <button type="submit" class="btn btn-success" ng-click="vm.transfer.start()">Start transfer</button>
 
+  <button type="submit"
+          class="btn btn-default"
+          ng-if="vm.transfer.type == 'disk image'"
+          ng-click="vm.add_next_metadata()"
+          title="Metadata entered in this form will be associated with the next component added to this transfer. Data will not be used if no component is added after the form is saved.">
+    Add next
+  </button>
+
   <div id="path_container">
     <div ng-repeat="component in vm.transfer.components" id="transfer-component-path-item-{{ $index + 1 }}">
       <span class="transfer_path">{{ component.path }}</span>
       <span class="transfer_path_icons">
-        <span ng-if="vm.transfer.type == 'disk_image'" class="transfer_path_edit_icon">
+        <span ng-if="vm.transfer.type == 'disk_image'" class="transfer_path_edit_icon" ng-click="vm.open_edit_page(component)">
           <img src="/media/images/table_edit.png">
         </span>
         <span class="transfer_path_delete_icon" ng-click="vm.remove_component(component)">

@@ -23,7 +23,7 @@
         <span ng-if="vm.transfer.type == 'disk_image'" class="transfer_path_edit_icon">
           <img src="/media/images/table_edit.png">
         </span>
-        <span class="transfer_path_delete_icon">
+        <span class="transfer_path_delete_icon" ng-click="vm.remove_component(component)">
           <img src="/media/images/delete.png">
         </span>
       </span>

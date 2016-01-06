@@ -6,6 +6,10 @@ import $ from 'jquery';
 
 class Transfer {
   constructor() {
+    this.empty_properties();
+  }
+
+  empty_properties() {
     this.name = '';
     this.type = 'standard';
     this.accession = '';
@@ -31,10 +35,7 @@ class Transfer {
 
   start() {
     let cleanup = response => {
-      this.name = '';
-      this.type = 'standard';
-      this.accession = '';
-      this.path = '';
+      this.empty_properties();
     };
 
     let params = {

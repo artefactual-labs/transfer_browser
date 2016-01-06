@@ -41,8 +41,8 @@ class Transfer {
       name: this.name,
       type: this.type,
       accession: this.accession,
-      'paths[]': this.components.map(component => component.path),
-      'row_ids[]': this.components.map(component => component.id),
+      'paths[]': this.components.map(component => Base64.encode(`${component.location}:${component.path}`)),
+      'row_ids[]': this.components.map(component => component.id || ''),
     };
 
     // Cleanup object state on success or failure

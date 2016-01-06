@@ -13,6 +13,10 @@ class Browse {
     let params = {'path': Base64.encode(path)};
     return this.browser.one(location_uuid).get(params).then(decode_browse_response).then(response => {
       return format_entries(response, path);
+    }).then(entries => {
+      entries.forEach(entry => entry.location = location_uuid);
+      console.log(entries);
+      return entries;
     });
   }
 }

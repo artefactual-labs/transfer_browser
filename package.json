@@ -25,7 +25,7 @@
     "webpack": "^1.12.9"
   },
   "scripts": {
-    "prepublish": "webpack --progress --colors --display-modules",
+    "prepublish": "webpack --progress --colors",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "pretest": "npm install",

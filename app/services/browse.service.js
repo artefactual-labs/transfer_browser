@@ -15,7 +15,6 @@ class Browse {
       return format_entries(response, path);
     }).then(entries => {
       entries.forEach(entry => entry.location = location_uuid);
-      console.log(entries);
       return entries;
     });
   }

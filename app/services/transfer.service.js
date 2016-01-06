@@ -12,8 +12,15 @@ class Transfer {
     this.components = [];
   }
 
-  add_path(path) {
-    this.components.push({path: path});
+  add_component(entry) {
+    // Copy the component so we're not mutating the object from the tree
+    let component = Object.assign({}, entry);
+    // If an ID for the next row has been provided, use it now
+    if (this.next_id) {
+      component.id = this.next_id;
+      delete this.next_id;
+    }
+    this.components.push(component);
   }
 
   fetch_id_for(component) {

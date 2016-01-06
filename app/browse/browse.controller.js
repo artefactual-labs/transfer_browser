@@ -1,10 +1,11 @@
 import angular from 'angular';
 
 class BrowseController {
-  constructor(Browse, SourceLocations) {
+  constructor(Browse, SourceLocations, Transfer) {
     let vm = this;
 
     vm.browser = Browse;
+    vm.transfer = Transfer;
     vm.source_location_browser = SourceLocations;
     vm.source_locations = {};
     vm.fetch_source_locations();
@@ -56,8 +57,8 @@ class BrowseController {
   }
 }
 
-export default angular.module('controllers.browse', ['services.browse', 'services.source_locations']).
+export default angular.module('controllers.browse', ['services.browse', 'services.source_locations', 'services.transfer']).
   controller('BrowseController', BrowseController).
   name;
 
-BrowseController.$inject = ['Browse', 'SourceLocations'];
+BrowseController.$inject = ['Browse', 'SourceLocations', 'Transfer'];

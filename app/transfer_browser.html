@@ -12,7 +12,7 @@
   <treecontrol class="tree-classic"
                tree-model="vm.data"
                options="vm.options"
-               selected-nodes="vm.selected"
+               selected-node="vm.selected"
                on-node-toggle="vm.on_toggle(node, expanded)">
     {{ node.title }} ({{ node.properties.display_string }})
   </treecontrol>

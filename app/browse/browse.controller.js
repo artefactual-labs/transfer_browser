@@ -55,6 +55,14 @@ class BrowseController {
       node.children_fetched = true;
     });
   }
+
+  file_can_be_added(file) {
+    if (this.transfer.type === 'zipped bag') {
+      return !file.directory && (file.title.endsWith('.zip') || file.title.endsWith('.tgz') || file.title.endsWith('.tar.gz'));
+    } else {
+      return file.directory;
+    }
+  }
 }
 
 export default angular.module('controllers.browse', ['services.browse', 'services.source_locations', 'services.transfer']).

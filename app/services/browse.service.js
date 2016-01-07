@@ -1,4 +1,5 @@
 import angular from 'angular';
+import Base64 from 'base64-helpers';
 import 'lodash';
 import 'restangular';
 

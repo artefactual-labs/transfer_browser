@@ -1,3 +1,5 @@
+import Base64 from 'base64-helpers';
+
 export function decode_browse_response(response) {
   let new_response = {};
   Object.assign(new_response, response);

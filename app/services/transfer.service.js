@@ -1,4 +1,5 @@
 import angular from 'angular';
+import Base64 from 'base64-helpers';
 // TODO rework the API in a way that's easier to use with Restangular?
 // The original API requires its body formatted in a way that
 // Restangular is not very good at.

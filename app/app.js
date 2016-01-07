@@ -18,9 +18,6 @@ import './services/transfer.service';
 import './browse/browse.controller';
 import './header/header.controller';
 
-// directives
-import 'ng-cache!./header/header.html';
-
 export default angular.module('transferBrowse', [
   'ngRoute',
   'route-segment',

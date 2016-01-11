@@ -3,7 +3,6 @@
 
 <div ng-app="transferBrowse">
 <div ng-controller="HeaderController as vm">
-  <label for="transfer-type">Transfer type</label>
   <select ng-model="vm.transfer.type" ng-disabled="vm.transfer.components.length > 0">
     <option value="standard" selected>Standard</option>
     <option value="unzipped bag">Unzipped Bag</option>
@@ -11,12 +10,13 @@
     <option value="dspace">DSpace</option>
     <option value="disk image">Disk Image</option>
   </select>
+  <div class="help-block">Transfer type</div>
 
-  <label for="transfer-name">Transfer name</label>
   <input ng-model="vm.transfer.name"/>
+  <div class="help-block">Transfer name</div>
 
-  <label for="transfer-accession">Accession no.</label>
   <input ng-model="vm.transfer.accession"/>
+  <div class="help-block">Accession no.</div>
 
   <button type="submit"
           class="btn btn-default"

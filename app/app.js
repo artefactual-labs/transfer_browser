@@ -8,6 +8,7 @@ import angular from 'angular';
 import 'angular-route';
 import 'angular-route-segment';
 import 'angular-tree-control';
+import 'bootstrap';
 import 'restangular';
 
 // services

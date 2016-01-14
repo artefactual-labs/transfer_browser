@@ -34,10 +34,6 @@ class Transfer {
   }
 
   start() {
-    let cleanup = response => {
-      this.empty_properties();
-    };
-
     let params = {
       name: this.name,
       type: this.type,
@@ -47,7 +43,9 @@ class Transfer {
     };
 
     // Cleanup object state on success or failure
-    return $.post('/filesystem/transfer/', params).then(cleanup, cleanup);
+    let promise = $.post('/filesystem/transfer/', params);
+    this.empty_properties();
+    return promise;
   }
 }
 

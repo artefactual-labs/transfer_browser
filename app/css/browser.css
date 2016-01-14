@@ -1,3 +1,8 @@
 .disabled-file {
     text-decoration: line-through;
 }
+
+.transfer-tree-container {
+    overflow: scroll;
+    max-height: 15em;
+}

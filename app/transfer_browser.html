@@ -72,6 +72,7 @@
 </div>
 
 <div ng-controller="BrowseController as vm" class="collapse" id="transfer_browse_tree">
+  <div class="well well-sm transfer-tree-container">
   <select ng-model="vm.source_location" ng-change="vm.browse(vm.source_location)">
     <option ng-repeat="(location_uuid, location) in vm.source_locations" value="{{ location_uuid }}">{{ location.description }}</option>
   </select>
@@ -87,5 +88,6 @@
       {{ node.title }} ({{ node.properties.display_string }})
     </span>
   </treecontrol>
+  </div>
 </div>
 </div>

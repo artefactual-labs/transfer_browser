@@ -2,13 +2,15 @@
 import './css/browser.css';
 import 'angular-tree-control/css/tree-control.css';
 import 'angular-tree-control/css/tree-control-attribute.css';
-import 'bootstrap/dist/css/bootstrap.css';
+// import 'bootstrap/dist/css/bootstrap.css';
 
 import angular from 'angular';
 import 'angular-route';
 import 'angular-route-segment';
 import 'angular-tree-control';
-import 'bootstrap';
+// FIXME: doing this clashes with the dashboard's global bootstrap;
+//        we should find a better fix for this at some point.
+// import 'bootstrap';
 import 'restangular';
 
 // services

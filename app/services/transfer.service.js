@@ -34,8 +34,12 @@ class Transfer {
   }
 
   start() {
+    // If this is a zipped bag, then there will be no transfer name;
+    // give it a dummy name instead.
+    let name = this.type === 'zipped bag' ? 'ZippedBag' : this.name;
+
     let params = {
-      name: this.name,
+      name: name,
       type: this.type,
       accession: this.accession,
       'paths[]': this.components.map(component => Base64.encode(`${component.location}:${component.path}`)),

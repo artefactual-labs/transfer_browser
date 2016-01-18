@@ -17,7 +17,7 @@
   <div class="help-block">Transfer type</div>
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-2" ng-if="vm.transfer.type !== 'zipped bag'">
   <input class="form-control" ng-model="vm.transfer.name"/>
   <div class="help-block">Transfer name</div>
   </div>
@@ -41,7 +41,7 @@
   <div class="col-md-1">
   <button type="submit"
           class="btn btn-success"
-          ng-disabled="!vm.transfer.name || vm.transfer.components.length === 0"
+          ng-disabled="!vm.enable_submit_button()"
           ng-click="vm.transfer.start()">Start transfer</button>
   </div>
 

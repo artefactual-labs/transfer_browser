@@ -31,6 +31,16 @@ class HeaderController {
       this.transfer.components.pop(component);
     }
   }
+
+  enable_submit_button() {
+    // It's legal for "zipped bag" transfers to have no title,
+    // since the final title is based on the name of the bag itself.
+    if (this.transfer.type !== 'zipped bag' && !this.transfer.name) {
+      return false;
+    }
+
+    return this.transfer.components.length > 0;
+  }
 }
 
 export default angular.module('controllers.header', ['services.transfer']).

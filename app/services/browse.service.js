@@ -3,7 +3,7 @@ import Base64 from 'base64-helpers';
 import 'lodash';
 import 'restangular';
 
-import {decode_browse_response, format_entries} from '../helpers/browse_helpers';
+import {decode_browse_response, format_entries} from 'archivematica-browse-helpers';
 
 class Browse {
   constructor(Restangular) {

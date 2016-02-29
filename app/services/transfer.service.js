@@ -29,7 +29,7 @@ class Transfer {
   }
 
   fetch_id_for(component) {
-    return $.get('/transfer/create_metadata_set_uuid/').then(results => {
+    return $.get('/transfer/create_metadata_set_uuid/').then(result => {
       component.id = result.uuid;
     });
   }

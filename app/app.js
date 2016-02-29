@@ -5,8 +5,6 @@ import 'angular-tree-control/css/tree-control-attribute.css';
 // import 'bootstrap/dist/css/bootstrap.css';
 
 import angular from 'angular';
-import 'angular-route';
-import 'angular-route-segment';
 import 'angular-tree-control';
 // FIXME: doing this clashes with the dashboard's global bootstrap;
 //        we should find a better fix for this at some point.
@@ -23,8 +21,6 @@ import './browse/browse.controller';
 import './header/header.controller';
 
 export default angular.module('transferBrowse', [
-  'ngRoute',
-  'route-segment',
   'restangular',
   'treeControl',
   'services.browse',

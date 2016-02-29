@@ -22,7 +22,7 @@ class BrowseController {
   }
 
   browse(location_uuid) {
-    let path = this.source_locations[location_uuid].description;
+    let path = this.source_locations[location_uuid].path;
     this.browser.browse(location_uuid, path).then(data => {
       this.data = data;
     });

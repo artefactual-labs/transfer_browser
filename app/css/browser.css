@@ -3,6 +3,6 @@
 }
 
 .transfer-tree-container {
-    overflow: scroll;
-    max-height: 15em;
+    overflow: auto;
+    max-height: 30em;
 }

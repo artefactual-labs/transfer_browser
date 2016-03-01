@@ -5,6 +5,9 @@ import Base64 from 'base64-helpers';
 // Restangular is not very good at.
 import $ from 'jquery';
 
+// Supports creating transfers by:
+// a) Tracking metadata of the current transfer-in-progress; and
+// b) Interacting with the Archivematica API to start a transfer and perform supporting functions.
 class Transfer {
   constructor() {
     this.empty_properties();
@@ -28,12 +31,16 @@ class Transfer {
     this.components.push(component);
   }
 
+  // Fetches a UUID to be associated with a transfer component.
+  // When the API call resolves, the UUID is assigned to the
+  // provided object's "id" attribute.
   fetch_id_for(component) {
     return $.get('/transfer/create_metadata_set_uuid/').then(result => {
       component.id = result.uuid;
     });
   }
 
+  // Starts a transfer using this service's current attributes.
   start() {
     // If this is a zipped bag, then there will be no transfer name;
     // give it a dummy name instead.

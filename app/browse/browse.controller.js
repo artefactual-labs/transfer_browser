@@ -1,5 +1,8 @@
 import angular from 'angular';
 
+// Controller for the tree browser component.
+// This uses the SourceLocations service to reference all of the available
+// source locations.
 class BrowseController {
   constructor(Browse, SourceLocations, Transfer) {
     let vm = this;
@@ -8,8 +11,10 @@ class BrowseController {
     vm.transfer = Transfer;
     vm.source_location_browser = SourceLocations;
     vm.source_locations = {};
+    // Fetches the available source locations from the service at startup.
     vm.fetch_source_locations();
 
+    // angular-tree-control options
     vm.options = {
       dirSelectable: true,
       isLeaf: function(node) {
@@ -44,6 +49,8 @@ class BrowseController {
     });
   }
 
+  // One level of directories is fetched at once; when the tree is
+  // expanded, children get fetched.
   on_toggle(node, expanded) {
     if (!expanded || node.children_fetched) {
       return;
@@ -56,6 +63,8 @@ class BrowseController {
     });
   }
 
+  // Determines whether a given file can be added to the transfer,
+  // depending on the transfer type.
   file_can_be_added(file) {
     if (this.transfer.type === 'zipped bag') {
       return !file.directory && (file.title.endsWith('.zip') || file.title.endsWith('.tgz') || file.title.endsWith('.tar.gz'));

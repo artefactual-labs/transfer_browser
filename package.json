@@ -19,13 +19,14 @@
     "karma-jasmine": "^0.3.6",
     "karma-junit-reporter": "^0.2.2",
     "karma-webpack": "^1.7.0",
+    "ng-cache-loader": "0.0.15",
     "shelljs": "^0.2.6",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.9"
   },
   "scripts": {
-    "prepublish": "webpack --progress --colors",
+    "prepublish": "webpack --progress --colors --entry ./embeddable.entry.js",
     "prestart": "npm install",
     "start": "http-server -a localhost -p 8000 -c-1",
     "pretest": "npm install",

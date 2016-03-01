@@ -1,9 +1,3 @@
-// styles
-import './css/browser.css';
-import 'angular-tree-control/css/tree-control.css';
-import 'angular-tree-control/css/tree-control-attribute.css';
-// import 'bootstrap/dist/css/bootstrap.css';
-
 import angular from 'angular';
 import 'angular-tree-control';
 // FIXME: doing this clashes with the dashboard's global bootstrap;

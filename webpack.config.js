@@ -5,7 +5,6 @@ var APP = __dirname + '/app';
 
 module.exports = {
   context: APP,
-  entry: './app.js',
   output: {
     path: APP,
     filename: 'transfer_browse.js',

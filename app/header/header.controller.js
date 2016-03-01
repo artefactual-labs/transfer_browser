@@ -2,11 +2,15 @@ import angular from 'angular';
 
 import '../services/transfer.service';
 
+// Controller for the header component, allowing metadata
+// entry and starting transfers.
 class HeaderController {
   constructor(Transfer) {
     this.transfer = Transfer;
   }
 
+  // Creates or fetches the metadata row ID for the pending transfer component,
+  // then opens a new tab to edit its metadata.
   add_next_metadata() {
     let element = {};
     this.transfer.fetch_id_for(element).then(() => {
@@ -15,6 +19,8 @@ class HeaderController {
     });
   }
 
+  // Opens a new tab to edit the metadata for a transfer component which
+  // has already been added.
   open_edit_page(component) {
     let open_window = () => {
       window.open(`/transfer/component/${component.id}`, '_blank');

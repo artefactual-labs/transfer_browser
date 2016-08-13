@@ -1,8 +1,7 @@
 <div ng-controller="HeaderController as vm">
-  <div class="container-fluid">
   <div class="row">
 
-  <div class="col-md-2">
+  <div class="col-xs-3">
   <select class="form-control" ng-model="vm.transfer.type" ng-disabled="vm.transfer.components.length > 0">
     <option value="standard" selected>Standard</option>
     <option value="unzipped bag">Unzipped Bag</option>
@@ -13,17 +12,17 @@
   <div class="help-block">Transfer type</div>
   </div>
 
-  <div class="col-md-2" ng-if="vm.transfer.type !== 'zipped bag'">
+  <div class="col-xs-3" ng-if="vm.transfer.type !== 'zipped bag'">
   <input class="form-control" ng-model="vm.transfer.name"/>
   <div class="help-block">Transfer name</div>
   </div>
 
-  <div class="col-md-2">
+  <div class="col-xs-2">
   <input class="form-control" ng-model="vm.transfer.accession"/>
   <div class="help-block">Accession no.</div>
   </div>
 
-  <div class="col-md-1">
+  <div class="col-xs-1">
   <button type="submit"
           class="btn btn-default"
           data-toggle="collapse"
@@ -34,14 +33,14 @@
   </button>
   </div>
 
-  <div class="col-md-1">
+  <div class="col-xs-2">
   <button type="submit"
           class="btn btn-success"
           ng-disabled="!vm.enable_submit_button()"
           ng-click="vm.transfer.start()">Start transfer</button>
   </div>
 
-  <div class="col-md-1">
+  <div class="col-xs-1">
   <button type="submit"
           class="btn btn-default"
           ng-if="vm.transfer.type == 'disk image'"
@@ -52,7 +51,6 @@
   </div>
 
   </div> <!-- /row -->
-  </div> <!-- /container-fluid -->
 
   <div id="path_container">
     <div ng-repeat="component in vm.transfer.components" id="transfer-component-path-item-{{ $index + 1 }}">

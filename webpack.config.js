@@ -7,7 +7,7 @@ module.exports = {
   context: APP,
   output: {
     path: APP,
-    filename: 'transfer_browse.js',
+    filename: 'transfer_browser.js',
   },
   module: {
     loaders: [

@@ -56,7 +56,7 @@
     <div ng-repeat="component in vm.transfer.components" id="transfer-component-path-item-{{ $index + 1 }}">
       <span class="transfer_path">{{ component.path }}</span>
       <span class="transfer_path_icons">
-        <span ng-if="vm.transfer.type == 'disk_image'" class="transfer_path_edit_icon" ng-click="vm.open_edit_page(component)">
+        <span ng-if="vm.transfer.type == 'disk image'" class="transfer_path_edit_icon" ng-click="vm.open_edit_page(component)">
           <img src="/media/images/table_edit.png">
         </span>
         <span class="transfer_path_delete_icon" ng-click="vm.remove_component(component)">

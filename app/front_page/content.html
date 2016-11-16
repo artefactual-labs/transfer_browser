@@ -3,23 +3,23 @@
 
   <div class="col-xs-3">
   <select class="form-control" ng-model="vm.transfer.type" ng-disabled="vm.transfer.components.length > 0">
-    <option value="standard" selected>Standard</option>
-    <option value="unzipped bag">Unzipped Bag</option>
-    <option value="zipped bag">Zipped bag</option>
-    <option value="dspace">DSpace</option>
-    <option value="disk image">Disk Image</option>
+    <option value="standard" selected>{{ "Standard" | translate }}</option>
+    <option value="unzipped bag">{{ "Unzipped bag" | translate }}</option>
+    <option value="zipped bag">{{ "Zipped bag" | translate }}</option>
+    <option value="dspace">{{ "DSpace" | translate }}</option>
+    <option value="disk image">{{ "Disk image" | translate }}</option>
   </select>
-  <div class="help-block">Transfer type</div>
+  <div class="help-block">{{ "Transfer type" | translate }}</div>
   </div>
 
   <div class="col-xs-3" ng-if="vm.transfer.type !== 'zipped bag'">
   <input class="form-control" ng-model="vm.transfer.name"/>
-  <div class="help-block">Transfer name</div>
+  <div class="help-block">{{ "Transfer name" | translate }}</div>
   </div>
 
   <div class="col-xs-2">
   <input class="form-control" ng-model="vm.transfer.accession"/>
-  <div class="help-block">Accession no.</div>
+  <div class="help-block">{{ "Accession no." | translate }}</div>
   </div>
 
   <div class="col-xs-1">
@@ -29,7 +29,7 @@
           data-target="#transfer_browse_tree"
           aria-expanded="false"
           aria-controls="transfer_browse_tree">
-    Browse
+    {{ "Browse" | translate }}
   </button>
   </div>
 
@@ -37,7 +37,7 @@
   <button type="submit"
           class="btn btn-success"
           ng-disabled="!vm.enable_submit_button()"
-          ng-click="vm.transfer.start()">Start transfer</button>
+          ng-click="vm.transfer.start()">{{ "Start transfer" | translate }}</button>
   </div>
 
   <div class="col-xs-1">
@@ -45,8 +45,8 @@
           class="btn btn-default"
           ng-if="vm.transfer.type == 'disk image'"
           ng-click="vm.add_next_metadata()"
-          title="Metadata entered in this form will be associated with the next component added to this transfer. Data will not be used if no component is added after the form is saved.">
-    Add next
+          title="{{ 'Metadata entered in this form will be associated with the next component added to this transfer. Data will not be used if no component is added after the form is saved.' | translate }}">
+    {{ "Add next" | translate }}
   </button>
   </div>
 
@@ -90,6 +90,6 @@
           class="btn btn-primary pull-right"
           ng-click="vm.transfer.add_component(vm.selected)"
           ng-disabled="!vm.selected || !vm.file_can_be_added(vm.selected)">
-    Add
+    {{ "Add" | translate }}
   </button>
 </div>
